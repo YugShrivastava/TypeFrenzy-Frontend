@@ -18,6 +18,10 @@ function SignUpForm() {
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
+    formData.username = formData.username?.trim();
+    formData.email = formData.email?.trim();
+    formData.password = formData.password?.trim();
+
     if (!formData.username.trim()) {
       toast.info("Username must not be empty!", {
         position: "top-right",
